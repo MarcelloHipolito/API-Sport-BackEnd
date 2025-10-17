@@ -2,7 +2,14 @@ import express from 'express';
 import cors from 'cors';
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+  // URL do Frontend no Netlify
+  origin: 'https://elencosport.netlify.app', 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', 
+  credentials: true,
+}));
+// ----------------------------------------------------
 
 // Objeto com jogadores do Sport Club Recife (dados fictícios)
 const players = [
@@ -323,4 +330,5 @@ app.get('/api/players/search/:name', (req, res) => {
 });
 
 const PORT = 3000;
+
 app.listen(PORT, () => console.log(`Servidor rodando em http://localhost:${PORT}`));
