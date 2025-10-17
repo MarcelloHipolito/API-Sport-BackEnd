@@ -46,7 +46,7 @@ const players = [
     id: 5,
     name: "Chico",
     position: "Zagueiro",
-    number: 15,
+    number: 44,
     age: 26,
     nationality: "Brasileiro",
     photo: "https://img.a.transfermarkt.technology/portrait/medium/612342-1743723890.jpg?lm=1"
@@ -323,4 +323,5 @@ app.get('/api/players/search/:name', (req, res) => {
 });
 
 const PORT = 3000;
+
 app.listen(PORT, () => console.log(`Servidor rodando em http://localhost:${PORT}`));
